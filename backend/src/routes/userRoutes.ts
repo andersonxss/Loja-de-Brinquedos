@@ -6,9 +6,12 @@ import { UpdateUsersDto } from "../dto/users/UpdateUsersDto";
 import { validateDto } from "../middlewares/validateDto";
 
 const router = Router();
-router.use(authMiddleware);
 
-router.post("/", validateDto(CreateUsersDto), userController.create); // cadastro público
+// Cadastro público
+router.post("/", validateDto(CreateUsersDto), userController.create);
+
+// Rotas protegidas
+router.use(authMiddleware);
 router.get("/", userController.list);
 router.put("/:id", validateDto(UpdateUsersDto), userController.update);
 router.delete("/:id", userController.delete);

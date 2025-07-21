@@ -1,13 +1,25 @@
 import request from "supertest";
 import app from "../app";
+import { AppDataSource } from "../data-source";
 
 let token: string;
 
 beforeAll(async () => {
+  await AppDataSource.initialize();
+  // Cria usuário de teste se não existir
+  await request(app).post("/api/users").send({
+    nome: "Usuário Teste",
+    email: "user21@gmail.com",
+    password: "123456",
+  });
   const res = await request(app)
     .post("/api/auth/login")
-    .send({ email: "admin@admin.com", password: "123456" });
+    .send({ email: "user21@gmail.com", password: "123456" });
   token = res.body.token;
+});
+
+afterAll(async () => {
+  await AppDataSource.destroy();
 });
 
 describe("Client API", () => {

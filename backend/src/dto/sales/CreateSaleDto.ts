@@ -1,6 +1,8 @@
 import { IsInt, Min, IsDateString } from "class-validator";
+import { Type } from "class-transformer";
 
 export class CreateSaleDto {
+  @Type(() => Number)
   @IsInt({ message: "ID do cliente deve ser um número inteiro" })
   clientId: number;
 

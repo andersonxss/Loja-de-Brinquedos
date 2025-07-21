@@ -19,8 +19,8 @@
 
 ## Estrutura
 
-- `src/components/`: Componentes reutilizáveis (Tabela, Loader, Feedback, EditClientForm)
-- `src/pages/`: Páginas principais (Login, Clientes, Estatísticas)
+- `src/components/`: Componentes reutilizáveis
+- `src/pages/`: Páginas principais (Login,Novo usuário, Home, Clientes, vendas)
 - `src/services/`: Serviços de API
 - `src/hooks/`: Hooks customizados (ex: useAuth)
 - `src/assets/`: Imagens e arquivos estáticos
@@ -34,7 +34,7 @@
 - Estatísticas com gráficos (Chart.js)
 - Destaques visuais dos melhores clientes
 - Lógica extra: primeira letra do alfabeto ausente no nome do cliente
-- Validação de formulários com react-hook-form + yup
+- Validação de formulários com react-hook-form + zod
 - Responsividade para mobile
 - Proteção de rotas
 
