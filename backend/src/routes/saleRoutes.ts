@@ -6,7 +6,7 @@ import { CreateSaleDto } from "../dto/sales/CreateSaleDto";
 
 const router = Router();
 
-// router.use(authMiddleware);
+router.use(authMiddleware);
 
 router.post("/", validateDto(CreateSaleDto), saleController.create);
 router.get("/", saleController.list);
