@@ -17,5 +17,10 @@ export const AppDataSource = new DataSource({
   entities: [Client, Sale, User],
   synchronize: false, // Use migrations!
   logging: false,
-  migrations: ["src/migrations/*.ts"],
+  // migrations: ["src/migrations/*.ts"],
+  migrations: [
+    process.env.NODE_ENV === "production"
+      ? "dist/migrations/*.js"
+      : "src/migrations/*.ts",
+  ],
 });
