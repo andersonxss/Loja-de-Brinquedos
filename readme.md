@@ -16,7 +16,8 @@ O objetivo é avaliar domínio de tecnologias, organização de código, boas pr
 - PostgreSQL
 - TypeORM (com migrations)
 - JWT (autenticação)
-- Jest + Supertest (testes)
+- Jest
+- Swagger
 
 ### 🎨 Frontend
 
